@@ -15,13 +15,31 @@ namespace LINQToXMLPart3
             //// 1. Add a new XElement at runtime
             // System.Configuration.ConfigurationManager.AppSettings[key]
 
-            var xmlFile = Properties.Settings.Default.XMLFile;
+            string input = "0.324324235";
+            decimal? result1 = input.GetNullableValueAs<decimal>(0);
+            var result2 = "100.34".GetNullableValueAs<short>(0);
+            var result3 = ".T.".GetNullableValueAs<bool>(false);
+            var result4 = "0".GetNullableValueAs<double>(0);
 
+            var result5 = "1000".GetValueAs<int>();
+
+            //string str = "abc";
+            //bool? result = XmlHelper.GetValue<bool>(str);
+            
+            //XmlHelper.StringAsInt()
+
+            string xmlFile = Properties.Settings.Default.XMLFile;
 
             XElement xEle = XElement.Load($@"..\..\{xmlFile}");
             xEle.Add(new XElement("Employee",
                 new XElement("EmpId", 5),
                 new XElement("Name", "George")));
+
+            //var query = from entity in xEle.Elements("")
+            //            select new
+            //            {
+            //                test = entity.Element("").GetAs<string>()
+            //            };
 
             //Console.Write(xEle);
 
@@ -46,7 +64,7 @@ namespace LINQToXMLPart3
             //var countries = xEle.Elements("Employee").Elements("Address").Elements("Country").ToList();
             //foreach (XElement cEle in countries)
             //    cEle.ReplaceNodes("United States Of America");
-
+            
             //Console.Write(xEle);
 
             //// 5. Remove Attribute from all the Elements
