@@ -167,26 +167,26 @@ namespace LINQToXMLPart3
         //    return (T)Convert.ChangeType(value, typeof(T));
         //}
 
-        public static int StringAsInt(object stringValue, int defaultValue)
-        {
+        //public static int StringAsInt(object stringValue, int defaultValue)
+        //{
 
-            return StringAsInt((stringValue != null ? stringValue.ToString() : string.Empty), defaultValue);
-        }
+        //    return StringAsInt((stringValue != null ? stringValue.ToString() : string.Empty), defaultValue);
+        //}
 
-        public static int StringAsInt(string stringValue)
-        {
-            return StringAsInt(stringValue, 0);
-        }
+        //public static int StringAsInt(string stringValue)
+        //{
+        //    return StringAsInt(stringValue, 0);
+        //}
 
-        public static int StringAsInt(string stringValue, int defaultValue)
-        {
-            int output = defaultValue;
+        //public static int StringAsInt(string stringValue, int defaultValue)
+        //{
+        //    int output = defaultValue;
 
-            if (stringValue != null)
-            {
-                int.TryParse(stringValue.ToString(), out output);
-            }
-            return output;
-        }
+        //    if (stringValue != null)
+        //    {
+        //        int.TryParse(stringValue.ToString(), out output);
+        //    }
+        //    return output;
+        //}
     }
 }
